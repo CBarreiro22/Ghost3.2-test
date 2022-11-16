@@ -48,7 +48,7 @@ When('I enter page {kraken-string}', async function (writepage) {
 });
 
 When('I enter contenido pagina {kraken-string}', async function (writecontenido) {
-    let element = await this.driver.$('.koenig-editor__editor.__mobiledoc-editor.__has-no-content');
+    let element = await this.driver.$(page.contentPage);
     return await element.setValue(writecontenido);
 });
 
