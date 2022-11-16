@@ -1,9 +1,11 @@
 const {Login} = require('./pages_object/login.js');
 const {UserData} = require('./pages_object/userData');
+const {Page} = require('./pages_object/page.js');
 
 const { Given, When, Then } = require('@cucumber/cucumber');
 const loginFrm= new Login("Incio");
 const userData = new UserData();
+const page = new Page();
 
 When('I enter email', async function () {
     ///html/body/div[2]/div/main/div/div/section/form/div[1]/span/input
@@ -15,7 +17,7 @@ When('I enter password', async function () {
     return await element.setValue(userData.passwordAdmin);
 });
 When('I click next', async function() {
-    let element = await this.driver.$('.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view');
+    let element = await this.driver.$(loginFrm.btnLogin );
     return await element.click();
 })
 
@@ -31,17 +33,17 @@ When('I enter password nuevo {kraken-string}', async function (writepage) {
 
 
 When('I click pages', async function() {
-    let element = await this.driver.$('#ember33');
+    let element = await this.driver.$('a[href="#/pages"]');
     return await element.click();
 })
 
 When('I click New page', async function() {
-    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-primary.view-actions-top-row');
+    let element = await this.driver.$(page.buttonNewPage);
     return await element.click();
 })
 
 When('I enter page {kraken-string}', async function (writepage) {
-    let element = await this.driver.$('.gh-editor-title.ember-text-area.gh-input.ember-view');
+    let element = await this.driver.$(page.btnTitlePage);
     return await element.setValue(writepage);
 });
 
@@ -51,7 +53,7 @@ When('I enter contenido pagina {kraken-string}', async function (writecontenido)
 });
 
 When('I click Salir page', async function() {
-    let element = await this.driver.$('.ember-view.gh-btn-editor.gh-editor-back-button');
+    let element = await this.driver.$(page.clickExitPage);
     return await element.click();
 })
 
