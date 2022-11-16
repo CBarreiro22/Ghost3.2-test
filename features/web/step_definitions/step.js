@@ -33,7 +33,7 @@ When('I enter password nuevo {kraken-string}', async function (writepage) {
 
 
 When('I click pages', async function() {
-    let element = await this.driver.$('a[href="#/pages"]');
+    let element = await this.driver.$(page.buttonPage);
     return await element.click();
 })
 
@@ -58,10 +58,14 @@ When('I click Salir page', async function() {
 })
 
 When('I click Posts', async function() {
-    let element = await this.driver.$('.ember-view.gh-secondary-action.gh-nav-new-post');
+    let element = await this.driver.$('#ember28');
     return await element.click();
 })
 
+When('I click new post button', async function() {
+    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-green');
+    return await element.click();
+})
 
 When('I enter new post {kraken-string}', async function (writepage) {
     let element = await this.driver.$('.gh-editor-title.ember-text-area.gh-input.ember-view');
@@ -83,8 +87,9 @@ When('I click on mobile content', async function() {
     return await element.click();
 })
 
-When('I click on preview', async function() {
-    let element = await this.driver.$('.gh-btn.gh-btn-editor.gh-editor-preview-trigger');
+When('I click on Post', async function() {
+                                     
+    let element = await this.driver.$('.blue.link.fw4.flex.items-center.ember-view');
     return await element.click();
 })
  
@@ -170,4 +175,6 @@ When('I enter email miembro {kraken-string}', async function(writepage) {
     let element = await this.driver.$('#member-email');
     return await element.setValue(writepage)
 })
+
+
 
