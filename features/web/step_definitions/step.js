@@ -78,7 +78,7 @@ When('I enter a subtitle {kraken-string}', async function (writepage) {
 });
 
 When('I click Post back', async function() {
-    let element = await this.driver.$('.ember-view.gh-btn-editor.gh-editor-back-button');
+    let element = await this.driver.$('.blue.link.fw4.flex.items-center.ember-view');
     return await element.click();
 })
 
@@ -104,12 +104,12 @@ When('I edit post {kraken-string}', async function(writepage) {
 })
 
 When('I click tag', async function() {
-    let element = await this.driver.$('#ember34');
+    let element = await this.driver.$('a[href="#/tags/"]');
     return await element.click();
 })
 
 When('I click new tag', async function() {
-    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-primary');
+    let element = await this.driver.$('a[href="#/tags/new/"]');
     return await element.click();
 })
 
@@ -140,7 +140,7 @@ When('I click imagen tag seleccionada', async function() {
 })
 
 When('I click save tag', async function() {
-    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-primary');
+    let element = await this.driver.$('.gh-btn.gh-btn-blue.gh-btn-icon.ember-view');
     return await element.click();
 })
 

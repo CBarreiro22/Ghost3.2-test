@@ -13,10 +13,10 @@ Feature: Crear un post
     And I wait for 2 seconds
     And I click new post button
     And I wait for 2 seconds
-    And I enter new post "Prueba del post"
+    And I enter new post " "
     And I wait for 2 seconds
-    And I enter a subtitle "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,...."
+    And I enter a subtitle " "
     And I wait for 2 seconds
-    And I click on Post
-    And I wait for 2 seconds
+    And I click Post back
+    And I wait for 4 seconds
     
